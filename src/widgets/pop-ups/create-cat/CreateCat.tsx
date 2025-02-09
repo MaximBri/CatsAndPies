@@ -1,6 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 
-import { setCatWindow } from '@/app/store/slices/WindowsSlice';
 import { createCatModel } from './model/createCatModel';
 import { useAppDispatch } from '@/app/store';
 import attentionSvg from '/img/attention.svg';
@@ -9,10 +8,21 @@ import styles from './CreateCat.module.scss';
 export const CreateCat = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { error, name, setName, toCreateCat } = createCatModel(dispatch, navigate);
+  const {
+    error,
+    name,
+    setName,
+    toCreateCat,
+    onCloseWindow,
+    popUpRef,
+    background,
+  } = createCatModel(dispatch, navigate);
   return (
     <>
-      <div className={styles.cat}>
+      <section
+        ref={popUpRef}
+        className={`${styles.cat} ${styles['cat--animation']}`}
+      >
         <h2 className={styles.cat__title}>Создай своего кота</h2>
         <div className={styles.cat__attention}>
           <img src={attentionSvg} alt="Attention" />
@@ -35,10 +45,11 @@ export const CreateCat = () => {
             Создать кота
           </button>
         )}
-      </div>
+      </section>
       <div
-        className={styles.cat__background}
-        onClick={() => dispatch(setCatWindow(false))}
+        ref={background}
+        className={`${styles.cat__background} ${styles['cat__background--animation']}`}
+        onClick={() => onCloseWindow()}
       ></div>
     </>
   );

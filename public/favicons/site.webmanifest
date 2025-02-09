@@ -1,0 +1,24 @@
+{
+  "version": "1",
+  "api_version": 1,
+  "name": "CatsAndPies",
+  "short_name": "CatsAndPies",
+  "icons": [
+    {
+      "src": "/CatsAndPies/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/CatsAndPies/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}
+

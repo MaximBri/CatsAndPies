@@ -54,7 +54,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://maximbri.github.io/React-project/",
+  "homepage": "https://maximbri.github.io/CatsAndPies/",
   "devDependencies": {
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^22.10.7",

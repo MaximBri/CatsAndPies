@@ -35,7 +35,7 @@ export default defineConfig({
       include: ['src/**/*.scss'],
     }),
   ],
-  base: '/React-project/',
+  base: '/CatsAndPies/',
   build: {
     outDir: 'build',
   },

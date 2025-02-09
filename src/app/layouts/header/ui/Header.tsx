@@ -9,7 +9,7 @@ import { setCatWindow } from '@/app/store/slices/WindowsSlice';
 import CatImage from '@/pages/cat/ui/CatImage';
 import { BurgerMenu } from '../../burger-menu';
 
-import logo from '/img/logo192.png';
+import logo from '/logo192.png';
 import regSvg from '/img/Person.svg';
 import styles from './Header.module.scss';
 
