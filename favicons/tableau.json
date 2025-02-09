@@ -2,8 +2,8 @@
   "version": "1",
   "api_version": 1,
   "layout": {
-    "logo": "/CatsAndPies/favicons/yandex-icon.png",
-    "color": "#000",
+    "logo": "/CatsAndPies/favicons/yandex-logo.png",
+    "color": "#4811AE",
     "show_title": true
   }
 }
