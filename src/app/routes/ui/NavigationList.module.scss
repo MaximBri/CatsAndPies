@@ -4,7 +4,16 @@
 .link {
   color: $text-primary;
   transition: color 0.3s;
+  &--burger {
+    color: $text-heading;
+  }
+  &--header {
+    color: $text-primary;
+  }
   &:hover {
+    color: $text-accent;
+  }
+  &.active {
     color: $text-accent;
   }
 }

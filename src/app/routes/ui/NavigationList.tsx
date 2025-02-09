@@ -2,8 +2,9 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { FC, memo } from 'react';
 
-import { getAuth } from '@/entities/user/authorization/model/AuthSlice';
 import { getExisting } from '@/entities/cat/model/CatSlice';
+import { RootState } from '@/app/store';
+import { getAuth } from '@/entities/user/authorization/model/AuthSlice';
 import { routes } from '@/shared/config/routes';
 import styles from './NavigationList.module.scss';
 
@@ -13,12 +14,16 @@ interface NavigationListProps {
 
 export const NavigationList: FC<NavigationListProps> = memo(
   ({ closeBurger }) => {
-    const auth = useSelector<any, boolean>(getAuth);
+    const auth = useSelector<RootState, boolean>(getAuth);
     const catExisting = useSelector(getExisting);
     return (
       <>
         <NavLink
-          className={({ isActive }) => (isActive ? styles.active : styles.link)}
+          className={({ isActive }) =>
+            `${styles.link} ${
+              closeBurger ? styles['link--burger'] : styles['link--header']
+            } ${isActive ? styles.active : ''}`
+          }
           onClick={() => (closeBurger ? closeBurger(false) : {})}
           to={routes.main.catalog.path}
         >
@@ -30,7 +35,13 @@ export const NavigationList: FC<NavigationListProps> = memo(
             {catExisting && (
               <NavLink
                 onClick={() => (closeBurger ? closeBurger(false) : {})}
-                className={({ isActive }) => (isActive ? styles.active : styles.link)}
+                className={({ isActive }) =>
+                  `${styles.link} ${
+                    closeBurger
+                      ? styles['link--burger']
+                      : styles['link--header']
+                  } ${isActive ? styles.active : ''}`
+                }
                 to={routes.main.cat.path}
               >
                 {routes.main.cat.name}
@@ -38,14 +49,22 @@ export const NavigationList: FC<NavigationListProps> = memo(
             )}
             <NavLink
               onClick={() => (closeBurger ? closeBurger(false) : {})}
-              className={({ isActive }) => (isActive ? styles.active : styles.link)}
+              className={({ isActive }) =>
+                `${styles.link} ${
+                  closeBurger ? styles['link--burger'] : styles['link--header']
+                } ${isActive ? styles.active : ''}`
+              }
               to={routes.main.account.path}
             >
               {routes.main.account.name}
             </NavLink>
             <NavLink
               onClick={() => (closeBurger ? closeBurger(false) : {})}
-              className={({ isActive }) => (isActive ? styles.active : styles.link)}
+              className={({ isActive }) =>
+                `${styles.link} ${
+                  closeBurger ? styles['link--burger'] : styles['link--header']
+                } ${isActive ? styles.active : ''}`
+              }
               to={routes.main.profile.path}
             >
               {routes.main.profile.name}
@@ -54,7 +73,11 @@ export const NavigationList: FC<NavigationListProps> = memo(
         )}
         <NavLink
           onClick={() => (closeBurger ? closeBurger(false) : {})}
-          className={({ isActive }) => (isActive ? styles.active : styles.link)}
+          className={({ isActive }) =>
+            `${styles.link} ${
+              closeBurger ? styles['link--burger'] : styles['link--header']
+            } ${isActive ? styles.active : ''}`
+          }
           to={routes.main.about.path}
         >
           {routes.main.about.name}

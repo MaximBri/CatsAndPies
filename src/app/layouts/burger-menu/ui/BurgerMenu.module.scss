@@ -47,11 +47,6 @@
 
     height: 100%;
     margin: rem(80) 0;
-
-    color: $text-heading;
-    & > .active {
-      color: $text-accent;
-    }
   }
   &__close-btn {
     position: absolute;
@@ -81,7 +76,7 @@
       transform: rotate(135deg);
     }
   }
-  &__background{
+  &__background {
     position: fixed;
     z-index: 100;
     top: 0;
